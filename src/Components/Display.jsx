@@ -1,7 +1,14 @@
 import React from "react";
 import styles from "./Display.module.css";
-const Display = () => {
-  return <input type="text" className={styles.display} />;
+const Display = ({ displayValue }) => {
+  return (
+    <input
+      type="text"
+      className={styles.display}
+      value={displayValue}
+      readOnly
+    />
+  );
 };
 
 export default Display;
