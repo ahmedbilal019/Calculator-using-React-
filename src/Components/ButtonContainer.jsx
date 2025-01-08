@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ButtonContainer.module.css";
 const ButtonContainer = ({ onButtonClick }) => {
   const buttonsNames = [
-    "C",
+    "AC",
     "1",
     "2",
     "+",
@@ -15,16 +15,19 @@ const ButtonContainer = ({ onButtonClick }) => {
     "7",
     "8",
     "/",
-    "=",
-    "9",
-    "0",
     ".",
+    "9",
+    "=",
+    "0",
+    "C",
   ];
   return (
     <div className={styles.buttonsContainer}>
       {buttonsNames.map((buttonName) => {
         const buttonClass = `${
-          buttonName === "C" ? styles.clearButton : styles.button
+          buttonName === "C" || buttonName === "AC"
+            ? styles.clearButton
+            : styles.button
         } ${buttonName === "=" ? styles.equalButton : styles.button}`;
 
         return (
